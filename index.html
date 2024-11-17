@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <!--====== Title ======-->
+  <title>Introducing</title>
+
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
+
+  <!--====== CSS Files LinkUp ======-->
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+  <link rel="stylesheet" href="assets/css/lineIcons.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="/__/firebase/9.6.5/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <!-- <script defer src="/__/firebase/9.6.5/firebase-auth-compat.js"></script> -->
+  <!-- <script defer src="/__/firebase/9.6.5/firebase-database-compat.js"></script> -->
+  <script defer src="/__/firebase/9.6.5/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/9.6.5/firebase-functions-compat.js"></script>
+  <!-- <script defer src="/__/firebase/9.6.5/firebase-messaging-compat.js"></script> -->
+  <!-- <script defer src="/__/firebase/9.6.5/firebase-storage-compat.js"></script> -->
+  <script defer src="/__/firebase/9.6.5/firebase-analytics-compat.js"></script>
+  <!-- <script defer src="/__/firebase/9.6.5/firebase-remote-config-compat.js"></script> -->
+  <script defer src="/__/firebase/9.6.5/firebase-performance-compat.js"></script>
+  <style>
+    #modal {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.333);
+      backdrop-filter: blur(5px);
+    }
+
+    .modalContainer {
+      width: auto;
+      height: 500px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.5);
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow-y: hidden;
+    }
+
+    .modalContainer form {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modalContainer>img {
+      transform: translateY(-10%);
+      object-fit: cover;
+      object-position: center;
+      height: auto;
+      width: 100%;
+      overflow-y: hidden;
+    }
+
+    .modalContainer form h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .modalContainer form input,
+    textarea {
+      padding: 10px;
+      position: relative;
+      border: 2px solid #FFA500;
+      border-radius: 7px;
+      font-size: 20px;
+    }
+
+    button {
+      border: none;
+      background: #FFA500;
+      border-radius: 7px;
+      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.181);
+      color: white;
+      padding: 10px 40px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+  <!--====== PRELOADER PART START ======-->
+  <div class="preloader">
+    <div class="loader">
+      <div class="spinner">
+        <div class="spinner-container">
+          <div class="spinner-rotator">
+            <div class="spinner-left">
+              <div class="spinner-circle"></div>
+            </div>
+            <div class="spinner-right">
+              <div class="spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--====== PRELOADER PART ENDS ======-->
+
+  <!--====== HEADER PART START ======-->
+  <header class="header-area">
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.svg" alt="Logo" />
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll active" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="#features">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="#facts">Why</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- navbar collapse -->
+
+              <div class="navbar-btn d-none d-sm-inline-block">
+                <button class="main-btn" data-scroll-nav="0" onclick="openModal()" rel="nofollow"
+                  style="background:#f06d02">
+                  Register Now
+                </button>
+              </div>
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- navbar area -->
+
+    <div id="home" class="header-hero bg_cover"
+      style="background-image: url(assets/images/header/banner-bg.svg)">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="header-hero-content text-center">
+              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay="0.2s">
+                Introducing
+              </h3>
+              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"
+                style="font-size:50px">
+                Lifestyle and services platform by SHREEVA
+              </h2>
+              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+                style="font-size: 20px;font-weight:400">
+                Create your own custom e-commerce platform for selling your products or services to
+                the new generation
+                on the internet.
+              </p>
+            </div>
+            <!-- header hero content -->
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s"
+              data-wow-delay="1.4s">
+              <!-- <img src="assets/images/header/header-hero.png" alt="hero" /> -->
+              <img src="assets/images/ul-logo.png" style="width: 40%;" alt="hero">
+            </div>
+            <!-- header hero image -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+      <div id="particles-1" class="particles"></div>
+    </div>
+    <!-- header hero -->
+  </header>
+  <!--====== HEADER PART ENDS ======-->
+
+  <!--====== SERVICES PART START ======-->
+  <section id="features" class="services-area pt-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="section-title text-center pb-40">
+            <div class="line m-auto" style="color: #FFA500;"></div>
+            <h3 class="title">
+              Unique Reasons,
+              <span> to buy product from SHREEVA</span>
+            </h3>
+          </div>
+          <!-- section title -->
+        </div>
+      </div>
+      <!-- row -->
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-7 col-sm-8">
+          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
+            data-wow-delay="0.2s">
+            <div class="services-icon">
+              <img class="shape" src="assets/images/services/services-shape.svg" alt="shape" />
+              <img class="shape-1" src="assets/images/services/services-shape-1.svg" alt="shape" />
+              <i class="lni lni-baloon"> </i>
+            </div>
+            <div class="services-content mt-30">
+              <h4 class="services-title">
+                <a href="javascript:void(0)">Provides Identity</a>
+              </h4>
+              <p class="text">
+                • Better brand identity and representation. A positive brand image can increase
+                sales on a constant
+                basis and help with promotional offers.
+              </p>
+              <a class="more" href="javascript:void(0)" style="color:#FFA500">Learn More <i
+                  class="lni lni-chevron-right"> </i>
+              </a>
+            </div>
+          </div>
+          <!-- single services -->
+        </div>
+        <div class="col-lg-4 col-md-7 col-sm-8">
+          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
+            data-wow-delay="0.5s">
+            <div class="services-icon">
+              <img class="shape" src="assets/images/services/services-shape.svg" alt="shape" />
+              <img class="shape-1" src="assets/images/services/services-shape-2.svg" alt="shape" />
+              <i class="lni lni-cog"> </i>
+            </div>
+            <div class="services-content mt-30">
+              <h4 class="services-title">
+                <a href="javascript:void(0)">Helps in Sales</a>
+              </h4>
+              <p class="text">
+                Boost in sales : From creating an email list to launching automated campaigns that
+                drive sales
+                constantly.
+              </p>
+              <a class="more" href="javascript:void(0)" style="color:#FFA500">Learn More <i
+                  class="lni lni-chevron-right"> </i>
+              </a>
+            </div>
+          </div>
+          <!-- single services -->
+        </div>
+        <div class="col-lg-4 col-md-7 col-sm-8">
+          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
+            data-wow-delay="0.8s">
+            <div class="services-icon">
+              <img class="shape" src="assets/images/services/services-shape.svg" alt="shape" />
+              <img class="shape-1" src="assets/images/services/services-shape-3.svg" alt="shape" />
+              <i class="lni lni-bolt-alt"> </i>
+            </div>
+            <div class="services-content mt-30">
+              <h4 class="services-title">
+                <a href="javascript:void(0)">Smart Marketing</a>
+              </h4>
+              <p class="text">
+                The system offers a marketing strategy based on the owner's potential customers,
+                which may include
+                working personnel, youngsters, and/or college students.
+              </p>
+              <a class="more" href="javascript:void(0)" style="color:#FFA500">Learn More <i
+                  class="lni lni-chevron-right"> </i>
+              </a>
+            </div>
+          </div>
+          <!-- single services -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+  <!--====== SERVICES PART ENDS ======-->
+
+  <section id="about">
+    <!--====== ABOUT PART START ======-->
+    <div class="about-area pt-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <div class="section-title">
+                <div class="line"></div>
+                <h3 class="title">
+                  Accounting and Billing software
+                </h3>
+              </div>
+              <!-- section title -->
+              <p class="text">
+                With this software you get an expense tracker, BRS, daily reports, you can file your
+                Income Tax
+                Reports, get an auto invoice process, and the most important features of all,
+                Avoiding Frauds!
+              </p>
+              <a href="javascript:void(0)" class="main-btn" style="background:#FFA500">Try it</a>
+            </div>
+            <!-- about content -->
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <img src="assets/images/4.png" alt="about" />
+            </div>
+            <!-- about image -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+      <div class="about-shape-1">
+        <img src="assets/images/about/about-shape-1.svg" alt="shape" />
+      </div>
+    </div>
+    <!--====== ABOUT PART ENDS ======-->
+
+    <!--====== ABOUT PART START ======-->
+    <div class="about-area pt-70">
+      <div class="about-shape-2">
+        <img src="assets/images/about/about-shape-2.svg" alt="shape" />
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-last">
+            <div class="about-content ms-lg-auto mt-50 wow fadeInLeftBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <div class="section-title">
+                <div class="line"></div>
+                <h3 class="title">
+                  Stock and Supply
+                </h3>
+              </div>
+              <!-- section title -->
+              <p class="text">
+                Get your Inventory management software along with order management software which
+                provides you with
+                features like customer database integration and live order panel functions.
+                provides you with
+              </p>
+              <a href="javascript:void(0)" class="main-btn" style="background:#FFA500">Try it</a>
+            </div>
+            <!-- about content -->
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <img class="custom_width" src="assets/images/urban_laundry.jpg" alt="about" />
+            </div>
+            <!-- about image -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--====== ABOUT PART ENDS ======-->
+
+    <!--====== ABOUT PART START ======-->
+    <div class="about-area pt-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <div class="section-title">
+                <div class="line"></div>
+                <h3 class="title">
+                  Marketing and operations
+                </h3>
+              </div>
+              <!-- section title -->
+              <p class="text">
+                As the name suggests, we provide you with E-mail marketing software with Customer
+                Contact
+                management, Customer satisfaction and feedback, along with Agent management features
+                like custom
+                reporting, Policy management and much more.
+              </p>
+              <a href="javascript:void(0)" class="main-btn" style="background:#FFA500">Try it</a>
+            </div>
+            <!-- about content -->
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <img src="assets/images/3.png" alt="about" />
+            </div>
+            <!-- about image -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+      <div class="about-shape-1">
+        <img src="assets/images/about/about-shape-1.svg" alt="shape" />
+      </div>
+    </div>
+    <!--====== ABOUT PART ENDS ======-->
+
+    <!--====== ABOUT PART START ======-->
+    <div class="about-area pt-70">
+      <div class="about-shape-2">
+        <img src="assets/images/about/about-shape-2.svg" alt="shape" />
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-last">
+            <div class="about-content ms-lg-auto mt-50 wow fadeInLeftBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <div class="section-title">
+                <div class="line"></div>
+                <h3 class="title">
+                  Biller
+                </h3>
+              </div>
+              <!-- section title -->
+              <p class="text">
+                Billing with QR Integration, Bill based report generation and Export option, Google
+                Analytics
+                Integration, the most important – Business Growth Reports, Discount management, POS
+                system with
+                printing setup and 2-3 booking engines.
+              </p>
+              <a href="javascript:void(0)" class="main-btn" style="background:#FFA500">Try it</a>
+            </div>
+            <!-- about content -->
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <img class="custom_width" src="assets/images/ul1.png" alt="about" />
+            </div>
+            <!-- about image -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--====== ABOUT PART ENDS ======-->
+
+    <!--====== ABOUT PART START ======-->
+    <div class="about-area pt-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <div class="section-title">
+                <div class="line"></div>
+                <h3 class="title">
+                  Inventory and operations
+                </h3>
+              </div>
+              <!-- section title -->
+              <p class="text">
+                Get up-to-date Balance Sheet Management feature with a smart alert system for
+                quantity, damage
+                calculation of your stock, updating stock to your software and also stock deduction
+                features which
+                helps running the business without any hinderances!
+              </p>
+              <a href="javascript:void(0)" class="main-btn" style="background:#FFA500">Try it</a>
+            </div>
+            <!-- about content -->
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <img src="assets/images/3.png" alt="about" />
+            </div>
+            <!-- about image -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+      <div class="about-shape-1">
+        <img src="assets/images/about/about-shape-1.svg" alt="shape" />
+      </div>
+    </div>
+    <!--====== ABOUT PART ENDS ======-->
+  </section>
+
+  <!--====== VIDEO COUNTER PART START ======-->
+  <section id="facts" class="video-counter pt-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 order-lg-last">
+          <div class="counter-wrapper mt-50 wow fadeIn" data-wow-duration="1s"
+            data-wow-delay="0.8s">
+            <div class="counter-content">
+              <div class="section-title">
+                <div class="line"></div>
+                <h3 class="title">E-commerce Marketplace</h3>
+              </div>
+              <!-- section title -->
+              <p class="text">
+                This software involves a B2B marketplace with advanced marketplace features like C2C
+                marketplace,
+                vendor marketplace, employee work hour management, global order search, and many
+                more such features.
+              </p>
+            </div>
+            <!-- counter content -->
+            <div class="row no-gutters">
+              <div class="col-4">
+                <div class="
+                      single-counter
+                      counter-color-1
+                      d-flex
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <div class="counter-items text-center">
+                    <span class="count countup text-uppercase" cup-end="125"></span>
+
+                    <p class="text">Downloads</p>
+                  </div>
+                </div>
+                <!-- single counter -->
+              </div>
+              <div class="col-4">
+                <div class="
+                      single-counter
+                      counter-color-2
+                      d-flex
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <div class="counter-items text-center">
+                    <span class="count countup text-uppercase" cup-end="87"></span>
+                    <p class="text">Active Users</p>
+                  </div>
+                </div>
+                <!-- single counter -->
+              </div>
+              <div class="col-4">
+                <div class="
+                      single-counter
+                      counter-color-3
+                      d-flex
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <div class="counter-items text-center">
+                    <span class="count countup text-uppercase" cup-end="59"></span>
+                    <p class="text">User Rating</p>
+                  </div>
+                </div>
+                <!-- single counter -->
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+          <!-- counter wrapper -->
+        </div>
+        <div class="col-lg-6">
+          <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <img class="dots" src="assets/images/video/dots.svg" alt="dots" />
+            <div class="video-wrapper">
+              <div class="video-image">
+                <img src="assets/images/2.png" alt="video" />
+              </div>
+            </div>
+            <!-- video wrapper -->
+          </div>
+          <!-- video content -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+  <!--====== VIDEO COUNTER PART ENDS ======-->
+
+  <!--====== FOOTER PART START ======-->
+  <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe-content mt-45">
+              <h2 class="subscribe-title">
+                Subscribe Our Newsletter <span>get regular updates</span>
+              </h2>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="subscribe-form mt-50">
+              <form onsubmit="addMail(event)">
+                <input type="text" placeholder="Enter email" />
+                <button class="main-btn"
+                  style="background: #FFA500; color: #fff;">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- subscribe area -->
+      <div class="footer-widget pb-100">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-8">
+            <!-- footer about -->
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-12">
+            <div class="footer-link d-flex mt-50 justify-content-sm-between">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="footer-title">
+                  <h4 class="title">Quick Links</h4>
+                </div>
+                <ul class="link">
+                  <li><a href="javascript:void(0)">Road Map</a></li>
+                  <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                  <li><a href="javascript:void(0)">Refund Policy</a></li>
+                  <li><a href="javascript:void(0)">Terms of Service</a></li>
+                  <li><a href="javascript:void(0)">Pricing</a></li>
+                </ul>
+              </div>
+              <!-- footer wrapper -->
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                  <h4 class="title">Resources</h4>
+                </div>
+                <ul class="link">
+                  <li><a href="javascript:void(0)">Home</a></li>
+                  <li><a href="javascript:void(0)">Page</a></li>
+                  <li><a href="javascript:void(0)">Portfolio</a></li>
+                  <li><a href="javascript:void(0)">Blog</a></li>
+                  <li><a href="javascript:void(0)">Contact</a></li>
+                </ul>
+              </div>
+              <!-- footer wrapper -->
+            </div>
+            <!-- footer link -->
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s"
+              data-wow-delay="0.8s">
+              <div class="footer-title">
+                <h4 class="title">Contact Us</h4>
+              </div>
+              <ul class="contact">
+                <li>+809272561823</li>
+                <li>create@shreeva.com</li>
+                <li>https://shreeva.com</li>
+              </ul>
+            </div>
+            <!-- footer contact -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- footer widget -->
+      <div class="footer-copyright">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-between">
+              <div class="copyright-content">
+                <p class="text">
+                  Designed and Developed by
+                  <a href="https://shreeva.com" rel="nofollow">Shreeva</a>
+                </p>
+              </div>
+              <!-- copyright content -->
+            </div>
+            <!-- copyright -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- footer copyright -->
+    </div>
+    <!-- container -->
+    <div id="particles-2"></div>
+  </footer>
+  <!--====== FOOTER PART ENDS ======-->
+
+  <!--====== BACK TOP TOP PART START ======-->
+  <a href="#" class="back-to-top"> <i class="lni lni-chevron-up"> </i> </a>
+  <!--====== BACK TOP TOP PART ENDS ======-->
+
+  <!--====== Javascript Files ======-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/glightbox.min.js"></script>
+  <script src="assets/js/count-up.min.js"></script>
+  <script src="assets/js/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Modal and firebase integration -->
+  <div id="modal">
+    <div class="modalContainer">
+      <form onsubmit="addContactDetails(event)">
+        <h2>Register Now</h2>
+        <hr>
+        <input type="text" placeholder="Full Name" name="name">
+        <input type="email" placeholder="Email" name="email">
+        <input type="number" placeholder="Phone Number" name="phone">
+        <textarea type="text" placeholder="Description" name="desc"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <img src="./assets/images/header/wave.svg" alt="">
+    </div>
+  </div>
+</body>
+<script>
+  document.getElementById("modal").addEventListener("click", function (e) {
+    if (e.target.id == "modal") {
+      document.getElementById("modal").style.display = "none";
+    }
+  });
+  function openModal() {
+    document.getElementById("modal").style.display = "block";
+  }
+  function addMail() {
+    var email = event.target[0].value;
+    var data = {
+      email: email,
+    }
+    firebase.database().ref("subscribers").push(data);
+  }
+  function addContactDetails(event) {
+    event.preventDefault();
+    console.log(event.target[0])
+    const data = {
+      name: event.target[0].value,
+      email: event.target[0].value,
+      number: event.target[0].value,
+      description: event.target[0].value
+    }
+    document.getElementById("modal").style.display = "none";
+    firebase.firestore().collection('contactReq').add(data).then((res) => {
+      tata.success('Thank You', 'Your contact request is sent. We will get back to you soon.');
+      cform.reset();
+    }).catch((err) => {
+      tata.error('Sorry', 'Something went wrong. Please try again.');
+    });
+  }
+</script>
+
+</html>
